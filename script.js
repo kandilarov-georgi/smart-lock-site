@@ -54,3 +54,6 @@ document.getElementById("status").innerText="Unlocked";
 alert("No access");
 }
 }
+function feature(name){
+  alert(name + " activated!");
+}
