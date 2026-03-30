@@ -1,69 +1,75 @@
 body{
   margin:0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color:white;
+  background: #0f172a;
+  overflow-x:hidden;
 }
 
-/* центриране */
+/* Анимиран фон */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background: radial-gradient(circle, #00c6ff33, transparent 40%);
+  animation: moveBg 10s linear infinite;
+  z-index:-1;
+}
+
+@keyframes moveBg{
+  0%{transform:translate(0,0);}
+  50%{transform:translate(-200px,-200px);}
+  100%{transform:translate(0,0);}
+}
+
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  background:rgba(0,0,0,0.3);
+  backdrop-filter:blur(10px);
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+}
+
+/* контейнер */
 .container{
   text-align:center;
-  padding:60px 20px;
-}
-
-/* заглавие */
-h1{
-  font-size:48px;
-  margin-bottom:10px;
-}
-
-p{
-  color:#ccc;
+  padding:80px 20px;
 }
 
 /* бутони */
-a, button{
-  display:inline-block;
-  margin:10px;
+button, .btn{
   padding:12px 25px;
   border-radius:30px;
-  background:linear-gradient(45deg, #00c6ff, #0072ff);
-  color:white;
-  text-decoration:none;
   border:none;
+  background:linear-gradient(45deg,#00c6ff,#0072ff);
+  color:white;
   cursor:pointer;
   transition:0.3s;
 }
 
-a:hover, button:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+button:hover, .btn:hover{
+  transform:scale(1.1);
 }
 
 /* карти */
 .card{
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,0.05);
   border-radius:15px;
   padding:25px;
   margin:20px auto;
-  width:280px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  width:300px;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
 }
 
-/* снимка */
-img{
-  margin:20px 0;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* анимация */
-.fade-in{
-  animation: fade 1.2s ease-in;
-}
-
-@keyframes fade{
-  from {opacity:0; transform:translateY(20px);}
-  to {opacity:1; transform:translateY(0);}
+.card:hover{
+  transform:translateY(-10px);
 }

@@ -7,19 +7,22 @@
 </head>
 <body>
 
-<div class="container fade-in">
+<div class="navbar">
+<h2>🔐 Lockify Dashboard</h2>
+</div>
 
-<h2>Dashboard</h2>
+<div class="container">
 
 <div class="card">
-<p>Status: <strong id="status">Locked</strong></p>
-<button onclick="unlock()">Check Access</button>
+<h3>Door Status</h3>
+<p id="status">Locked</p>
+<button onclick="unlock()">Unlock</button>
 </div>
 
 <div class="card">
-<h3>Recent Activity</h3>
-<p>🔓 Door unlocked today</p>
-<p>📱 Notification sent</p>
+<h3>Live Activity</h3>
+<p>Door opened today</p>
+<p>Alert sent</p>
 </div>
 
 </div>
