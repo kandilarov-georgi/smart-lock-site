@@ -1,46 +1,69 @@
 body{
-  font-family: Arial, sans-serif;
   margin:0;
-  background: linear-gradient(to right, #1e3c72, #2a5298);
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color:white;
-  text-align:center;
 }
 
+/* центриране */
 .container{
-  margin-top:60px;
+  text-align:center;
+  padding:60px 20px;
 }
 
+/* заглавие */
 h1{
-  font-size:42px;
+  font-size:48px;
+  margin-bottom:10px;
 }
 
 p{
-  color:#ddd;
+  color:#ccc;
 }
 
+/* бутони */
 a, button{
   display:inline-block;
   margin:10px;
-  padding:12px 20px;
-  border:none;
-  border-radius:8px;
-  background:#00c6ff;
-  color:black;
+  padding:12px 25px;
+  border-radius:30px;
+  background:linear-gradient(45deg, #00c6ff, #0072ff);
+  color:white;
   text-decoration:none;
+  border:none;
   cursor:pointer;
   transition:0.3s;
 }
 
 a:hover, button:hover{
-  transform:scale(1.1);
-  background:#00a2cc;
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
 }
 
+/* карти */
 .card{
-  background:white;
-  color:black;
-  padding:20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius:15px;
+  padding:25px;
   margin:20px auto;
-  width:300px;
-  border-radius:12px;
+  width:280px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* снимка */
+img{
+  margin:20px 0;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* анимация */
+.fade-in{
+  animation: fade 1.2s ease-in;
+}
+
+@keyframes fade{
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
 }
