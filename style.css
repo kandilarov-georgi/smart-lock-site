@@ -1,81 +1,93 @@
 body{
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  color:white;
-  background: #0f172a;
-  overflow-x:hidden;
+margin:0;
+font-family:Segoe UI;
+background:#0f172a;
+color:white;
 }
 
-/* Анимиран фон */
-body::before{
-  content:"";
-  position:fixed;
-  width:200%;
-  height:200%;
-  background: radial-gradient(circle, #00c6ff33, transparent 40%);
-  animation: moveBg 10s linear infinite;
-  z-index:-1;
+/* фон */
+body::after{
+content:"🔐";
+position:fixed;
+font-size:300px;
+opacity:0.05;
+top:20%;
+left:30%;
+z-index:-1;
 }
 
-@keyframes moveBg{
-  0%{transform:translate(0,0);}
-  50%{transform:translate(-200px,-200px);}
-  100%{transform:translate(0,0);}
-}
-
-/* Navbar */
+/* navbar */
 .navbar{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
-  background:rgba(0,0,0,0.3);
-  backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:rgba(0,0,0,0.4);
 }
 
-.navbar a{
-  color:white;
-  text-decoration:none;
-  margin:0 10px;
-}
-
-/* контейнер */
+/* container */
 .container{
-  text-align:center;
-  padding:80px 20px;
+text-align:center;
+padding:60px;
 }
 
-/* бутони */
-button, .btn{
-  padding:12px 25px;
-  border-radius:30px;
-  border:none;
-  background:linear-gradient(45deg,#00c6ff,#0072ff);
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover, .btn:hover{
-  transform:scale(1.1);
-}
-
-/* карти */
+/* cards */
 .card{
-  background:rgba(255,255,255,0.05);
-  border-radius:15px;
-  padding:25px;
-  margin:20px auto;
-  width:300px;
-  backdrop-filter:blur(10px);
-  transition:0.3s;
+background:rgba(255,255,255,0.05);
+padding:20px;
+margin:20px auto;
+width:300px;
+border-radius:15px;
+transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
+transform:translateY(-10px);
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
+
+/* buttons */
+button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#00c6ff;
+color:black;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* input */
 input{
-  padding:10px;
-  width:80%;
-  border-radius:8px;
-  border:none;
+padding:10px;
+width:80%;
+border-radius:8px;
+border:none;
+}
+
+/* door */
+.door{
+width:100px;
+height:160px;
+background:#654321;
+margin:20px auto;
+transform-origin:left;
+transition:0.6s;
+}
+
+.door::after{
+content:"";
+width:10px;
+height:10px;
+background:gold;
+position:absolute;
+right:10px;
+top:50%;
+border-radius:50%;
+}
+
+.open{
+transform:rotateY(-60deg);
 }

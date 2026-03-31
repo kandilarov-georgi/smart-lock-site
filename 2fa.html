@@ -3,15 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>2FA</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Enter 2FA Code</h2>
+<div class="navbar">
+<h2>🔐 Lockify</h2>
+<a href="login.html">⬅ Back</a>
+</div>
+
+<div class="container">
+<div class="card">
+
+<h2>Verification</h2>
 
 <form id="faForm">
-<input type="text" id="faCode"><br><br>
+<input id="faCode" placeholder="Enter code"><br><br>
 <button>Verify</button>
 </form>
+
+</div>
+</div>
 
 <script src="script.js"></script>
 

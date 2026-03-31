@@ -1,11 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Plans</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.products{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<h2>🔐 Lockify</h2>
+<a href="index.html">⬅ Back</a>
+</div>
+
 <div class="container">
 
 <h2>Our Smart Locks</h2>
+
+<div class="products">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1558002038-1055907df827" width="200">
 <h3>Basic Lock</h3>
 <p>€79</p>
+<p>2 years warranty</p>
 <button onclick="buy()">Buy</button>
 </div>
 
@@ -13,6 +38,7 @@
 <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509" width="200">
 <h3>Advanced Lock</h3>
 <p>€129</p>
+<p>3 years warranty</p>
 <button onclick="buy()">Buy</button>
 </div>
 
@@ -20,10 +46,13 @@
 <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7" width="200">
 <h3>Pro Lock</h3>
 <p>€199</p>
+<p>5 years warranty</p>
 <button onclick="buy()">Buy</button>
 </div>
 
-<h3>💸 Buy 3 items → 10% discount!</h3>
+</div>
+
+<h3>💸 Buy 3 → 10% discount</h3>
 
 <div class="card">
 <h3>Cloud Subscription</h3>
@@ -32,3 +61,8 @@
 </div>
 
 </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

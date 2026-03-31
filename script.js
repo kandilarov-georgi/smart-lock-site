@@ -1,4 +1,4 @@
-// Register
+// register
 document.getElementById("registerForm")?.addEventListener("submit", e=>{
 e.preventDefault();
 localStorage.setItem("user", username.value);
@@ -6,7 +6,7 @@ localStorage.setItem("pass", password.value);
 alert("Registered!");
 });
 
-// Login
+// login
 document.getElementById("loginForm")?.addEventListener("submit", e=>{
 e.preventDefault();
 
@@ -35,25 +35,30 @@ alert("Wrong code");
 }
 });
 
-// Fake payment
+// unlock animation
+function unlock(){
+let status = document.getElementById("status");
+let door = document.getElementById("door");
+
+if(status.innerText === "Locked"){
+status.innerText = "Unlocked";
+door.classList.add("open");
+} else {
+status.innerText = "Locked";
+door.classList.remove("open");
+}
+}
+
+// payments
 function buy(){
-localStorage.setItem("bought","yes");
 alert("Purchase successful!");
 }
 
 function subscribe(){
-localStorage.setItem("sub","yes");
 alert("Subscription active!");
 }
 
-// Unlock
-function unlock(){
-if(localStorage.getItem("bought") || localStorage.getItem("sub")){
-document.getElementById("status").innerText="Unlocked";
-} else {
-alert("No access");
-}
-}
+// features
 function feature(name){
-  alert(name + " activated!");
+alert(name + " activated!");
 }
