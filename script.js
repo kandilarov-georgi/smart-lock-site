@@ -69,5 +69,24 @@ alert("Subscription active!");
 
 // features
 function feature(name){
+
+if(!localStorage.getItem("user")){
+if(confirm("You need to login first!")){
+window.location = "login.html";
+}
+return;
+}
+
 alert(name + " activated!");
+}
+function checkAccess(){
+if(!localStorage.getItem("user")){
+document.getElementById("guestActions").innerHTML = `
+<p>You are not logged in</p>
+<button onclick="location.href='login.html'">Login</button>
+<button onclick="location.href='register.html'">Register</button>
+`;
+} else {
+window.location = "plans.html";
+}
 }
