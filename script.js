@@ -35,18 +35,27 @@ alert("Wrong code");
 }
 });
 
-// unlock animation
+// unlock + sound
 function unlock(){
 let status = document.getElementById("status");
 let door = document.getElementById("door");
+let sound = new Audio("unlock.mp3");
 
 if(status.innerText === "Locked"){
 status.innerText = "Unlocked";
 door.classList.add("open");
+sound.play();
 } else {
 status.innerText = "Locked";
 door.classList.remove("open");
 }
+}
+
+// loading
+window.onload = function(){
+setTimeout(()=>{
+document.getElementById("loader")?.classList.add("hidden");
+},1000);
 }
 
 // payments
