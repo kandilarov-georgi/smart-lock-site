@@ -1,17 +1,26 @@
 // register
 document.getElementById("registerForm")?.addEventListener("submit", e=>{
 e.preventDefault();
-localStorage.setItem("user", username.value);
-localStorage.setItem("pass", password.value);
+
+let user = document.getElementById("username");
+let pass = document.getElementById("password");
+
+if(user && pass){
+localStorage.setItem("user", user.value);
+localStorage.setItem("pass", pass.value);
 alert("Registered!");
+}
 });
 
 // login
 document.getElementById("loginForm")?.addEventListener("submit", e=>{
 e.preventDefault();
 
-if(loginUsername.value === localStorage.getItem("user") &&
-   loginPassword.value === localStorage.getItem("pass")){
+let user = document.getElementById("loginUsername");
+let pass = document.getElementById("loginPassword");
+
+if(user.value === localStorage.getItem("user") &&
+   pass.value === localStorage.getItem("pass")){
 
 let code = Math.floor(100000 + Math.random()*900000);
 sessionStorage.setItem("code", code);
@@ -28,14 +37,16 @@ alert("Wrong login");
 document.getElementById("faForm")?.addEventListener("submit", e=>{
 e.preventDefault();
 
-if(faCode.value == sessionStorage.getItem("code")){
+let code = document.getElementById("faCode");
+
+if(code.value == sessionStorage.getItem("code")){
 window.location = "dashboard.html";
 } else {
 alert("Wrong code");
 }
 });
 
-// unlock + sound
+// unlock
 function unlock(){
 let status = document.getElementById("status");
 let door = document.getElementById("door");
@@ -51,34 +62,38 @@ door.classList.remove("open");
 }
 }
 
-// loading
-window.onload = function(){
+// loading FIX
+window.addEventListener("load", function(){
+let loader = document.getElementById("loader");
+if(loader){
 setTimeout(()=>{
-document.getElementById("loader")?.classList.add("hidden");
-},1000);
+loader.style.display = "none";
+}, 1000);
 }
+});
 
-// payments
+// buy
 function buy(){
 alert("Purchase successful!");
 }
 
+// subscribe
 function subscribe(){
 alert("Subscription active!");
 }
 
-// features
+// feature защита
 function feature(name){
-
 if(!localStorage.getItem("user")){
 if(confirm("You need to login first!")){
 window.location = "login.html";
 }
 return;
 }
-
 alert(name + " activated!");
 }
+
+// check access
 function checkAccess(){
 if(!localStorage.getItem("user")){
 document.getElementById("guestActions").innerHTML = `
