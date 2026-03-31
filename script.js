@@ -63,15 +63,12 @@ door.classList.remove("open");
 }
 
 // loading FIX
-window.addEventListener("load", function(){
+window.onload = function(){
 let loader = document.getElementById("loader");
 if(loader){
-setTimeout(()=>{
 loader.style.display = "none";
-}, 1000);
 }
-});
-
+};
 // buy
 function buy(){
 alert("Purchase successful!");
