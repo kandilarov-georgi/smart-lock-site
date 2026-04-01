@@ -1,3 +1,4 @@
+/* ===== BODY ===== */
 body{
 margin:0;
 font-family:Segoe UI;
@@ -5,7 +6,7 @@ background:#0f172a;
 color:white;
 }
 
-/* loader */
+/* ===== LOADER ===== */
 #loader{
 position:fixed;
 width:100%;
@@ -18,11 +19,7 @@ z-index:999;
 font-size:30px;
 }
 
-.hidden{
-display:none;
-}
-
-/* watermark */
+/* ===== WATERMARK ===== */
 body::before{
 content:"Security is the key to a wonderful life";
 position:fixed;
@@ -34,7 +31,7 @@ transform:translate(-50%,-50%);
 z-index:-1;
 }
 
-/* big icon */
+/* ===== BACKGROUND ICON ===== */
 body::after{
 content:"🔐";
 position:fixed;
@@ -45,28 +42,44 @@ left:30%;
 z-index:-1;
 }
 
-/* navbar */
+/* ===== NAVBAR ===== */
 .navbar{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px;
 background:rgba(0,0,0,0.4);
 }
 
-/* container */
+.navbar a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+}
+
+/* ===== CONTAINER ===== */
 .container{
 text-align:center;
 padding:60px;
 }
 
-/* cards */
+/* ===== PRODUCTS LAYOUT ===== */
+.products{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+/* ===== CARDS ===== */
 .card{
 background:rgba(255,255,255,0.05);
 padding:20px;
 margin:20px auto;
-width:300px;
+width:280px;
 border-radius:15px;
 transition:0.3s;
+position:relative;
 }
 
 .card:hover{
@@ -74,112 +87,18 @@ transform:translateY(-10px);
 box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
 
-/* buttons */
-button{
-padding:10px 20px;
-border:none;
-border-radius:20px;
-background:#00c6ff;
-color:black;
-cursor:pointer;
+/* ===== IMAGES ===== */
+.card img{
+border-radius:10px;
+margin-bottom:10px;
+transition:0.3s;
 }
 
-button:hover{
+.card:hover img{
 transform:scale(1.1);
 }
 
-/* input */
-input{
-padding:10px;
-width:80%;
-border-radius:8px;
-border:none;
-}
-
-/* door */
-.door{
-width:100px;
-height:160px;
-background:#654321;
-margin:20px auto;
-transform-origin:left;
-transition:0.6s;
-}
-
-.door::after{
-content:"";
-width:10px;
-height:10px;
-background:gold;
-position:absolute;
-right:10px;
-top:50%;
-border-radius:50%;
-}
-
-.open{
-transform:rotateY(-60deg);
-}
-.products{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.products img{
-border-radius:10px;
-}
-.products{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.card{
-position:relative;
-}
-
-/* badges */
-.badge{
-position:absolute;
-top:10px;
-left:10px;
-background:#22c55e;
-padding:5px 10px;
-border-radius:10px;
-font-size:12px;
-}
-
-.badge.popular{
-background:#3b82f6;
-}
-
-.badge.premium{
-background:#facc15;
-color:black;
-}
-
-/* highlight */
-.highlight{
-transform:scale(1.1);
-border:2px solid #3b82f6;
-}
-/* PRODUCTS LAYOUT */
-.products{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-/* CARD POSITION */
-.card{
-position:relative;
-}
-
-/* BADGES */
+/* ===== BADGES ===== */
 .badge{
 position:absolute;
 top:10px;
@@ -201,9 +120,58 @@ background:#facc15;
 color:black;
 }
 
-/* HIGHLIGHT PLAN */
+/* ===== HIGHLIGHT PLAN ===== */
 .highlight{
 transform:scale(1.1);
 border:2px solid #3b82f6;
 z-index:2;
+}
+
+/* ===== BUTTONS ===== */
+button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#00c6ff;
+color:black;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* ===== INPUTS ===== */
+input{
+padding:10px;
+width:80%;
+border-radius:8px;
+border:none;
+}
+
+/* ===== DOOR (Dashboard animation) ===== */
+.door{
+width:100px;
+height:160px;
+background:#654321;
+margin:20px auto;
+transform-origin:left;
+transition:0.6s;
+position:relative;
+}
+
+.door::after{
+content:"";
+width:10px;
+height:10px;
+background:gold;
+position:absolute;
+right:10px;
+top:50%;
+border-radius:50%;
+}
+
+.open{
+transform:rotateY(-60deg);
 }
