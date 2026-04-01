@@ -102,3 +102,16 @@ document.getElementById("guestActions").innerHTML = `
 window.location = "plans.html";
 }
 }
+document.getElementById("locksmithForm")?.addEventListener("submit", e=>{
+e.preventDefault();
+
+let name = document.getElementById("lockName").value;
+let phone = document.getElementById("lockPhone").value;
+
+if(name && phone){
+alert("Application sent! We will contact you soon.");
+document.getElementById("locksmithForm").reset();
+} else {
+alert("Please fill all fields");
+}
+});
