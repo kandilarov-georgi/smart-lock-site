@@ -165,4 +165,45 @@ color:black;
 .highlight{
 transform:scale(1.1);
 border:2px solid #3b82f6;
-}с
+}
+/* PRODUCTS LAYOUT */
+.products{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+/* CARD POSITION */
+.card{
+position:relative;
+}
+
+/* BADGES */
+.badge{
+position:absolute;
+top:10px;
+left:10px;
+background:#22c55e;
+padding:6px 12px;
+border-radius:12px;
+font-size:12px;
+font-weight:bold;
+color:white;
+}
+
+.badge.popular{
+background:#3b82f6;
+}
+
+.badge.premium{
+background:#facc15;
+color:black;
+}
+
+/* HIGHLIGHT PLAN */
+.highlight{
+transform:scale(1.1);
+border:2px solid #3b82f6;
+z-index:2;
+}
