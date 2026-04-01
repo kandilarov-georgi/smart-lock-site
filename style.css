@@ -130,3 +130,39 @@ flex-wrap:wrap;
 .products img{
 border-radius:10px;
 }
+.products{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.card{
+position:relative;
+}
+
+/* badges */
+.badge{
+position:absolute;
+top:10px;
+left:10px;
+background:#22c55e;
+padding:5px 10px;
+border-radius:10px;
+font-size:12px;
+}
+
+.badge.popular{
+background:#3b82f6;
+}
+
+.badge.premium{
+background:#facc15;
+color:black;
+}
+
+/* highlight */
+.highlight{
+transform:scale(1.1);
+border:2px solid #3b82f6;
+}
